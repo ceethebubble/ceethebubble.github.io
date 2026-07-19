@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal Hoot - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/principal-hoot.css">
+</head>
+
+<body>
+    
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/principal-hoot.css">
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <section class="content">
+            
+            <span class="feather" style="left:10%; animation-delay:0s;">🪶</span>
+            <span class="feather" style="left:35%; animation-delay:2s;">🪶</span>
+            <span class="feather" style="left:70%; animation-delay:4s;">🪶</span>
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1>Principal Hoot</h1>
+
+                <img src="../assets/images/characters/principal-hoot.png"
+                     alt="Principal Hoot"
+                     width="160">
+
+                    <div class="wisdom-quote">
+                    <p>"It always seems impossible until it's done."</p>
+                    </div>
+                <span class="hoot-badge">Chancellor of Beringstern University</span>
+            </section>
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2>Welcome!</h2>
+
+                <p>
+                    Welcome to Principal Hoot's detailed page!
+                    A lot of work has been put into this page,
+                    so I hope you enjoy it!
+                </p>
+
+                <p>
+                    Although the title of <em>Chancellor</em> would technically
+                    be more appropriate for my position,
+                    "Principal Hoot" has become my nickname among many students,
+                    so I happily go along with it.
+                </p>
+
+            </section>
+
+            <div class="moon-badge"></div>
+
+            <!-- Character Information -->
+
+            <section class="card">
+
+                <h2>Character Information</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Eleanor Hoot</td>
+                    </tr>
+
+                    <tr>
+                        <td>Birthday</td>
+                        <td>October 14th, 1971</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>She/Her</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Head of University</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Burrowing Owl</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+
+            <!-- Description -->
+
+            <section class="card">
+
+                <h2>Description</h2>
+
+                <p>
+                    Principal Hoot is the head of Beringstern University,
+                    a school that has existed since 2002.
+                </p>
+
+                <p>
+                    The player recently graduated from the university in
+                    Chapter 1, having completed their studies in 2024.
+                </p>
+
+                <p>
+                    As of 2026, Principal Hoot has worked at
+                    Beringstern University for over twenty years and remains
+                    deeply passionate about teaching.
+                </p>
+
+                <p>
+                    During Chapter 1, she offers the player the
+                    <strong>Professor</strong> job, one of the first four
+                    professions available.
+                </p>
+
+                <p>
+                    Despite being a nocturnal animal,
+                    she enjoys the sunlight and is usually active during the day.
+                    She also enjoys reading, writing, and playing chess.
+                </p>
+
+                <p>
+                    Principal Hoot is voiced by
+                    <a href="https://m.youtube.com/@Mayvee-i9y/videos?ra=m"
+                       target="_blank">
+                        Mayvee.
+                    </a>
+                </p>
+
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <h2>FAQ</h2>
+
+                <h3>
+                    What made you want to become a chancellor?
+                </h3>
+
+                <p>
+                    I was actually once a professor in my early twenties
+                    at another town's college.
+                </p>
+
+                <p>
+                    When Beringstern University opened in 2002,
+                    I moved here and joined the faculty.
+                    I've remained here ever since,
+                    watching generations of students grow and succeed.
+                </p>
+
+                <h3>
+                    What makes you a good chancellor?
+                </h3>
+
+                <p>
+                    Definitely a strong memory,
+                    years of experience,
+                    and the fact that I genuinely want to help students.
+                </p>
+
+            </section>
+            
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2>Fun Facts!</h2>
+
+                <ul>
+
+                    <li>
+                        Principal Hoot performed in school plays during
+                        middle school and became surprisingly good at making
+                        convincing hissing sounds, even startling some members
+                        of the audience!
+                    </li>
+
+                    <li>
+                        Principal Hoot competed in track during high school.
+                        After breaking her leg, she recovered and got right
+                        back on track.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+<div class="owl-eyes">
+              <span class="owl-eye"></span>
+              <span class="owl-eye"></span>
+          </div>
+
+</body>
+</html>
