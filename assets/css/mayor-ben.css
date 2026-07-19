@@ -1,0 +1,383 @@
+/* ---------- Fonts ---------- */
+
+@font-face {
+    font-family: "Tenderness";
+    src: url("../fonts/Tenderness.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ---------- General ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffdce5 0%,
+            #ffdce5 33.333%,
+
+            #dceeff 33.333%,
+            #dceeff 66.666%,
+
+            #fff4c7 66.666%,
+            #fff4c7 100%
+        );
+
+    background-size: 150% 100%;
+
+    animation: backgroundMove 10s linear infinite;
+
+    color: #453425;
+
+    font-family: "Tenderness", sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+/* ---------- Animated Background ---------- */
+
+@keyframes backgroundMove {
+
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 300% 50%;
+    }
+
+}
+
+
+/* ---------- Layout ---------- */
+
+.layout {
+    min-height: 100vh;
+}
+
+
+/* ---------- Main Content ---------- */
+
+.main-content {
+    flex: 1;
+}
+
+
+.content {
+
+    width: min(1000px, 92%);
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* ---------- Cards ---------- */
+
+.card {
+
+    background:
+        rgba(255,255,255,0.92);
+
+    backdrop-filter:
+        blur(10px);
+
+    border-radius:
+        18px;
+
+    padding:
+        35px;
+
+    margin:
+        35px 0;
+
+    box-shadow:
+        0 8px 25px rgba(84, 39, 0, 0.349);
+
+    border:
+        1px solid rgba(255,255,255,0.8);
+
+}
+
+
+.card h1,
+.card h2 {
+
+    font-family: "Tenderness", sans-serif;
+
+    font-weight: normal;
+
+    margin-top: 0;
+
+}
+
+
+/* ---------- Character Header ---------- */
+
+.character-header {
+
+    text-align: center;
+
+    width: 650px;
+
+    max-width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+.character-header h1 {
+
+    font-size: 52px;
+
+}
+
+
+.character-header img {
+
+    display: block;
+
+    margin: 25px auto;
+
+    width: 200px;
+
+    max-width: 80%;
+
+    border-radius: 20px;
+
+}
+
+
+/* ---------- Text ---------- */
+
+p {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+}
+
+
+h2 {
+
+    font-size: 34px;
+
+}
+
+
+h3 {
+
+    font-size: 26px;
+
+}
+
+
+li {
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ---------- Links ---------- */
+
+a {
+
+    color: #c76e50;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: color .2s ease;
+
+}
+
+
+a:hover {
+
+    color: #6e2610;
+
+}
+
+
+/* ---------- Information Table ---------- */
+
+.info-table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    font-size: 21px;
+
+}
+
+
+.info-table th {
+
+    background: #ffde5b;
+
+    padding: 18px;
+
+    text-align: left;
+
+    font-size: 22px;
+
+}
+
+
+.info-table td {
+
+    padding: 18px;
+
+    background: #fffcabb3;
+}
+
+
+.info-table tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+
+.info-table td:first-child {
+
+    font-weight: bold;
+
+    width: 35%;
+
+    color: #855024;
+
+}
+
+
+/* ---------- Quote ---------- */
+
+blockquote {
+
+    margin: 20px auto;
+
+    max-width: 650px;
+
+    padding: 0;
+
+    border: none;
+
+    font-style: italic;
+
+    font-size: 23px;
+
+    color: #555;
+
+}
+
+
+/* ---------- Note ---------- */
+
+.note {
+
+    background: #fff8d9;
+
+    border-left: 8px solid #f4d43d;
+
+}
+
+
+/* ---------- Divider ---------- */
+
+hr {
+
+    border: none;
+
+    height: 2px;
+
+    background: #fff3e2;
+
+    margin: 40px 0;
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:700px) {
+
+    .character-header h1 {
+        font-size: 38px;
+    }
+
+
+    p {
+
+        font-size: 18px;
+
+    }
+
+
+    li {
+
+        font-size: 18px;
+
+    }
+
+
+    .card {
+
+        padding: 22px;
+
+    }
+
+
+    .info-table {
+
+        font-size: 17px;
+
+    }
+
+
+    .info-table th {
+
+        font-size: 18px;
+
+    }
+
+
+    .info-table td {
+
+        padding: 12px;
+
+    }
+
+}
