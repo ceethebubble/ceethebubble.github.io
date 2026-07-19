@@ -261,10 +261,9 @@ hr {
 
 }
 
-.dropdown-content h4 {
-
+.navbar .dropdown-content h4 {
     margin: 10px 0;
-    color: #261943;
+    color: #261943 !important;
     font-family: "More Sugar";
     font-size: 20px;
 }
