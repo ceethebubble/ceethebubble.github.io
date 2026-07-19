@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+<script>
+fetch("assets/includes/navbar.html")
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+    });
+</script>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="hero">
+
+            <h1>
+                <span style="font-size: 1.4em;">404</span><br>
+            </h1>
+            <h2>Page Not Found</h2>
+
+        </header>
+
+        <section class="content">
+
+            <section class="card">
+
+                <h2>Need Help?</h2>
+
+                <p>
+                    If you need help finding something, you can reach out to the
+                    <a href="https://discord.gg/Paa58svbYh" target="_blank">
+                        Beringstern Discord server
+                    </a>
+                    for assistance.
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+sections.forEach(section => {
+    section.classList.add("scroll-section");
+});
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                entry.target.classList.remove("visible");
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+</script>
+
+</body>
+</html>

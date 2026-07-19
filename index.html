@@ -57,7 +57,7 @@ fetch("assets/includes/navbar.html")
                 </p>
 
                 <p>
-                    Use the sidebar to navigate between pages, but be careful...
+                    Use the navigation bar to navigate between pages, but be careful...
                     the character pages are written by the characters themselves,
                     so expect plenty of personality!
                 </p>
@@ -68,7 +68,7 @@ fetch("assets/includes/navbar.html")
 
             <section class="note">
 
-                <h2>📝 Note</h2>
+                <h2>Note</h2>
 
                 <p>
                     This wiki is still a work in progress!
@@ -179,6 +179,53 @@ fetch("assets/includes/navbar.html")
     </main>
 
 </div>
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
 
 </body>
 </html>

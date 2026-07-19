@@ -1,14 +1,9 @@
-* {
-    box-shadow: none !important;
-    text-shadow: none !important;
-}
-
 /* ---------- Fonts ---------- */
 
 @font-face {
-    font-family: "Tenderness";
+    font-family: "Baby Doll";
     font-weight: bold;
-    src: url("../fonts/Tenderness.otf") format("opentype");
+    src: url("../fonts/Baby Doll.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -28,47 +23,14 @@ html, body {
 
 body {
 
-    box-shadow: none;
-    text-shadow: none;
+    background: linear-gradient(to bottom, #efe0ff, #d0acff, #c8a7ff);
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffdce5 0%,
-            #ffdce5 33.333%,
+    color: #48136f;
 
-            #dceeff 33.333%,
-            #dceeff 66.666%,
-
-            #fff4c7 66.666%,
-            #fff4c7 100%
-        );
-
-    background-size: 150% 100%;
-
-    animation: backgroundMove 10s linear infinite;
-
-    color: #453425;
-
-    font-family: "Tenderness", sans-serif;
+    font-family: "Baby Doll", sans-serif;
     font-weight: bold;
 
     min-height: 100vh;
-
-}
-
-
-/* ---------- Animated Background ---------- */
-
-@keyframes backgroundMove {
-
-    from {
-        background-position: 0% 50%;
-    }
-
-    to {
-        background-position: 300% 50%;
-    }
 
 }
 
@@ -123,7 +85,7 @@ body {
 .card h1,
 .card h2 {
 
-    font-family: "Tenderness", sans-serif;
+    font-family: "Baby Doll", sans-serif;
     font-weight: bold;
 
     font-weight: normal;
@@ -210,7 +172,7 @@ li {
 
 .main-content a {
 
-    color: #c76e50;
+    color: #2746ac;
 
     text-decoration: none;
 
@@ -223,7 +185,7 @@ li {
 
 .main-content a:hover {
 
-    color: #6e2610;
+    color: #022b58;
 
 }
 
@@ -251,11 +213,13 @@ li {
 
 .info-table th {
 
-    background: #ffde5b;
+    background: #e385ff;
 
     padding: 18px;
 
     text-align: left;
+
+    color: #5917a5;
 
     font-size: 22px;
 
@@ -266,7 +230,7 @@ li {
 
     padding: 18px;
 
-    background: #fffcabb3;
+    background: #df7dffb3;
 }
 
 
@@ -283,7 +247,7 @@ li {
 
     width: 35%;
 
-    color: #855024;
+    color: #5917a5;
 
 }
 
@@ -309,17 +273,6 @@ blockquote {
 }
 
 
-/* ---------- Note ---------- */
-
-.note {
-
-    background: #fff8d9;
-
-    border-left: 8px solid #f4d43d;
-
-}
-
-
 /* ---------- Divider ---------- */
 
 hr {
@@ -328,7 +281,7 @@ hr {
 
     height: 2px;
 
-    background: #fff3e2;
+    background: #e9d4ff;
 
     margin: 40px 0;
 
@@ -393,7 +346,7 @@ hr {
 
     opacity: 0;
 
-    transform: translateX(-80px);
+    transform: translateX(80px);
 
     transition:
         opacity 0.7s ease,

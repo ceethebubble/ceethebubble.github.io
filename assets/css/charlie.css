@@ -6,9 +6,9 @@
 /* ---------- Fonts ---------- */
 
 @font-face {
-    font-family: "Tenderness";
+    font-family: "Lucyville";
     font-weight: bold;
-    src: url("../fonts/Tenderness.otf") format("opentype");
+    src: url("../fonts/Lucyville.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -31,26 +31,13 @@ body {
     box-shadow: none;
     text-shadow: none;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffdce5 0%,
-            #ffdce5 33.333%,
+    background: #ff0000;
 
-            #dceeff 33.333%,
-            #dceeff 66.666%,
+    animation: colorChange 4s linear infinite;
 
-            #fff4c7 66.666%,
-            #fff4c7 100%
-        );
+    color: #ff0000;
 
-    background-size: 150% 100%;
-
-    animation: backgroundMove 10s linear infinite;
-
-    color: #453425;
-
-    font-family: "Tenderness", sans-serif;
+    font-family: "Lucyville", sans-serif;
     font-weight: bold;
 
     min-height: 100vh;
@@ -60,16 +47,36 @@ body {
 
 /* ---------- Animated Background ---------- */
 
-@keyframes backgroundMove {
+@keyframes colorChange {
 
-    from {
-        background-position: 0% 50%;
+    0% {
+        background: #ff0000;
+        color: hsl(0, 100%, 30%)
     }
-
-    to {
-        background-position: 300% 50%;
+    16.6666% {
+        background: #aa00ff;
+        color: hsl(280, 100%, 30%);
     }
-
+    33.3333% {
+        background: #00a6ff;
+        color: hsl(240, 100%, 30%);
+    }
+    50% {
+        background: #00ff26;
+        color: hsl(120, 100%, 30%);
+    }
+    66.6666% {
+        background: #fffb00;
+        color: hsl(60, 100%, 30%);
+    }
+    83.3333% {
+        background: #ff8800;
+        color: hsl(40, 100%, 30%);
+    }
+    100% {
+        background: #ff0000;
+        color: hsl(0, 100%, 30%);
+    }
 }
 
 
@@ -103,7 +110,7 @@ body {
 .card {
 
     background:
-        rgba(255,255,255,0.92);
+        rgba(255,255,255,0.6);
 
     border-radius:
         8px;
@@ -115,7 +122,7 @@ body {
         35px 0;
 
     border:
-        1px solid rgba(255,255,255,0.8);
+        1px solid rgba(255,255,255,0.5);
 
 }
 
@@ -123,7 +130,7 @@ body {
 .card h1,
 .card h2 {
 
-    font-family: "Tenderness", sans-serif;
+    font-family: "Lucyville", sans-serif;
     font-weight: bold;
 
     font-weight: normal;
@@ -210,7 +217,7 @@ li {
 
 .main-content a {
 
-    color: #c76e50;
+    color: randomColor();
 
     text-decoration: none;
 
@@ -223,7 +230,7 @@ li {
 
 .main-content a:hover {
 
-    color: #6e2610;
+    color: randomColor();
 
 }
 
@@ -251,7 +258,7 @@ li {
 
 .info-table th {
 
-    background: #ffde5b;
+    background: rgba(0, 0, 0, 0.1);
 
     padding: 18px;
 
@@ -266,7 +273,7 @@ li {
 
     padding: 18px;
 
-    background: #fffcabb3;
+    background: #ffffff;
 }
 
 
@@ -282,8 +289,6 @@ li {
     font-weight: bold;
 
     width: 35%;
-
-    color: #855024;
 
 }
 
@@ -308,18 +313,6 @@ blockquote {
 
 }
 
-
-/* ---------- Note ---------- */
-
-.note {
-
-    background: #fff8d9;
-
-    border-left: 8px solid #f4d43d;
-
-}
-
-
 /* ---------- Divider ---------- */
 
 hr {
@@ -328,7 +321,7 @@ hr {
 
     height: 2px;
 
-    background: #fff3e2;
+    background: #a7a7a7;
 
     margin: 40px 0;
 
@@ -393,11 +386,15 @@ hr {
 
     opacity: 0;
 
-    transform: translateX(-80px);
+    transform:
+        translate(var(--x), var(--y))
+        scaleX(var(--s))
+        scaleY(var(--sy))
+        rotate(var(--r));
 
     transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity .5s ease,
+        transform 1s inOutBack(2.25);
 
 }
 
@@ -406,6 +403,10 @@ hr {
 
     opacity: 1;
 
-    transform: translateX(0);
+    transform:
+        translate(0, 0)
+        scaleX(1)
+        scaleY(1)
+        rotate(0deg);
 
 }

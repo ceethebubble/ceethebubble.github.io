@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlie the Cerberus - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/charlie.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/charlie.css">
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1>Charlie the Cerberus</h1>
+
+                <img src="../assets/images/characters/charlie.png"
+                     alt="Charlie the Cerberus"
+                     width="200">
+
+                <blockquote>
+                    "Hi!! We happy to see you."
+                </blockquote>
+
+            </section>
+
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2>Welcome! Welcome! Welcome!</h2>
+
+                <p>
+                    Welcome, viewer, to this awesome page of the Wiki!
+                    This page is dedicated to Charlie, the head of Cerberun Lab!
+                </p>
+
+                <p>
+                    Look! Look! Look! The fun facts are waiting for you!
+                </p>
+
+                <p>
+                    We hope you enjoy the scientisting you will see in this page!
+                </p>
+
+            </section>
+
+
+
+            <!-- Character Information -->
+
+            <section class="card">
+
+                <h2>Info! Info! Info!</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Name</td>
+                        <td>Charlie the Cerberus</td>
+                    </tr>
+
+                    <tr>
+                        <td>Birthday</td>
+                        <td>August 13, 1999</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>They/Them</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Head of Cerberun Lab</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Cerberus</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+
+
+            <!-- About -->
+
+            <section class="card">
+
+                <h2>About Them! About Them! About Them!</h2>
+
+                <p>
+                    Charlie serves as the head of Cerberun Lab and when the
+                    player chooses the "Scientist" role, they are the one to
+                    talk to before entering the job.
+                </p>
+
+                <p>
+                    The job is very important! It is mixing certain amounts
+                    of colors to get to a specific one, which is very awesome!
+                </p>
+
+            </section>
+
+
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <h2>Frequently! Asked! Questions!</h2>
+
+                <h3>
+                    Why did you want to become a scientist?
+                </h3>
+
+                <p>
+                    We saw someone else do it at a very young age, and we
+                    thought it was really fun-looking! And so we went to this
+                    thing called "School" and after that we went to "College"
+                    to get this thing called a "degree" because Scientisting
+                    Labs required that for some reason.
+                </p>
+
+                <p>
+                    We know scientisting has stuff to do with temperature,
+                    but we never knew you can GET a degree?
+                </p>
+
+                <p>
+                    After getting fired for pickling a jelly and causing a lab room to explode we decided to
+                    make my own lab!
+                </p>
+
+                <p>
+                    And the building stood up, even after we tried to pickle
+                    jelly! We think someone put a kaboomy device in the old
+                    jellies.
+                </p>
+
+                <p>
+                    It was Fun! Fun! Fun!
+                </p>
+
+            </section>
+
+
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2>Fun Facts! Fun Facts! Fun Facts!</h2>
+
+                <ul>
+
+                    <li>
+                        They don't have a building degree and built the lab
+                        themselves. They also did not pass any safety checks,
+                        so Larry could, if he weren't lazy, tear the lab down.
+                        He is too lazy to do so, however.
+                    </li>
+
+                    <li>
+                        They can't mix colors because they have
+                        red-green colorblindness. That is why they assign the
+                        player that task.
+                    </li>
+
+                    <li>
+                        They all have blue eyes.
+                    </li>
+
+                </ul>
+
+                <p>
+                    More fun facts coming soon! Soon! Soon!
+                </p>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+<script src="../assets/js/charlie-scroll.js"></script>
+
+</body>
+</html>

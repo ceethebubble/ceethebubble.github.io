@@ -1,20 +1,16 @@
+/* what the heck is htis? some kind of code?!?! */
+
 * {
     box-shadow: none !important;
     text-shadow: none !important;
 }
 
-/* ---------- Fonts ---------- */
-
 @font-face {
-    font-family: "Tenderness";
+    font-family: Arial;
     font-weight: bold;
-    src: url("../fonts/Tenderness.otf") format("opentype");
-    font-weight: normal;
     font-style: normal;
+    src: local("Arial");
 }
-
-
-/* ---------- General ---------- */
 
 * {
     box-sizing: border-box;
@@ -27,60 +23,22 @@ html, body {
 
 
 body {
+    background: #ffffff;
 
-    box-shadow: none;
-    text-shadow: none;
+    color: #000000;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffdce5 0%,
-            #ffdce5 33.333%,
-
-            #dceeff 33.333%,
-            #dceeff 66.666%,
-
-            #fff4c7 66.666%,
-            #fff4c7 100%
-        );
-
-    background-size: 150% 100%;
-
-    animation: backgroundMove 10s linear infinite;
-
-    color: #453425;
-
-    font-family: "Tenderness", sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: bold;
 
     min-height: 100vh;
 
 }
 
-
-/* ---------- Animated Background ---------- */
-
-@keyframes backgroundMove {
-
-    from {
-        background-position: 0% 50%;
-    }
-
-    to {
-        background-position: 300% 50%;
-    }
-
-}
-
-
-/* ---------- Layout ---------- */
-
 .layout {
     min-height: 100vh;
 }
 
 
-/* ---------- Main Content ---------- */
 
 .main-content {
     flex: 1;
@@ -89,16 +47,12 @@ body {
 
 .content {
 
-    width: min(1000px, 92%);
-
-    margin: auto;
+    margin: 2px;
 
     padding-bottom: 60px;
 
 }
 
-
-/* ---------- Cards ---------- */
 
 .card {
 
@@ -106,7 +60,7 @@ body {
         rgba(255,255,255,0.92);
 
     border-radius:
-        8px;
+        0px;
 
     padding:
         35px;
@@ -123,7 +77,7 @@ body {
 .card h1,
 .card h2 {
 
-    font-family: "Tenderness", sans-serif;
+    font-family: "Arial", sans-serif;
     font-weight: bold;
 
     font-weight: normal;
@@ -131,24 +85,6 @@ body {
     margin-top: 0;
 
 }
-
-
-/* ---------- Character Header ---------- */
-
-.character-header {
-
-    text-align: center;
-
-    width: 650px;
-
-    max-width: 90%;
-
-    margin-left: auto;
-
-    margin-right: auto;
-
-}
-
 
 .character-header h1 {
 
@@ -161,13 +97,9 @@ body {
 
     display: block;
 
-    margin: 25px auto;
+    margin: 0px;
 
-    width: 200px;
-
-    max-width: 80%;
-
-    border-radius: 8%;
+    border-radius: 0%;
 
 }
 
@@ -205,30 +137,23 @@ li {
 
 }
 
-
-/* ---------- Links ---------- */
-
 .main-content a {
 
-    color: #c76e50;
+    color: #828282;
 
     text-decoration: none;
 
     font-weight: bold;
-
-    transition: color .2s ease;
 
 }
 
 
 .main-content a:hover {
 
-    color: #6e2610;
+    color: #2f2f2f;
 
 }
 
-
-/* ---------- Information Table ---------- */
 
 .info-table {
 
@@ -242,7 +167,7 @@ li {
 
     overflow: hidden;
 
-    border-radius: 8px;
+    border-radius: 0px;
 
     font-size: 21px;
 
@@ -251,7 +176,7 @@ li {
 
 .info-table th {
 
-    background: #ffde5b;
+    background: #949494;
 
     padding: 18px;
 
@@ -266,7 +191,7 @@ li {
 
     padding: 18px;
 
-    background: #fffcabb3;
+    background: #5a5a5ab3;
 }
 
 
@@ -281,9 +206,7 @@ li {
 
     font-weight: bold;
 
-    width: 35%;
-
-    color: #855024;
+    color: #0e0e0e;
 
 }
 
@@ -292,11 +215,9 @@ li {
 
 blockquote {
 
-    margin: 20px auto;
+    margin: 20px;
 
-    max-width: 650px;
-
-    padding: 0;
+    padding: 20px;
 
     border: none;
 
@@ -315,7 +236,7 @@ blockquote {
 
     background: #fff8d9;
 
-    border-left: 8px solid #f4d43d;
+    border-left: 8px solid #fcfbf8;
 
 }
 
@@ -384,28 +305,5 @@ hr {
         padding: 12px;
 
     }
-
-}
-
-/* ---------- Scroll Fade Animation ---------- */
-
-.scroll-section {
-
-    opacity: 0;
-
-    transform: translateX(-80px);
-
-    transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
-
-}
-
-
-.scroll-section.visible {
-
-    opacity: 1;
-
-    transform: translateX(0);
 
 }

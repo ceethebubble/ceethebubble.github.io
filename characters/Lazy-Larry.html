@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Larry - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/lazy-larry.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/lazy-larry.css">
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1>Lazy Larry</h1>
+
+                <img src="../assets/images/characters/lazy-larry.png"
+                     alt="Lazy Larry"
+                     width="400">
+
+                <blockquote>
+                    "Yeah, yeah, whatever kid."
+                </blockquote>
+
+            </section>
+
+
+            <!-- Info -->
+
+            <section class="card">
+
+                <h2>info</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>thing</th>
+                        <th>value</th>
+                    </tr>
+
+                    <tr>
+                        <td>name</td>
+                        <td>Lazy Larry</td>
+                    </tr>
+
+                    <tr>
+                        <td>pronouns</td>
+                        <td>he/him</td>
+                    </tr>
+
+                    <tr>
+                        <td>job / occupation</td>
+                        <td>Construction stuff</td>
+                    </tr>
+
+                    <tr>
+                        <td>species</td>
+                        <td>Couch Potato</td>
+                    </tr>
+
+                    <tr>
+                        <td>hobby</td>
+                        <td>Napping</td>
+                    </tr>
+
+                    <tr>
+                        <td>stuff i hate</td>
+                        <td>Working</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+
+            <!-- About -->
+
+            <section class="card">
+
+                <h2>about me</h2>
+
+                <p>
+                    this is Larry...
+                </p>
+
+                <p>
+                    apparently I'm supposed to write this page myself because
+                    nobody else wanted to.
+                </p>
+
+                <p>
+                    I'm the guard of the Construction Site.
+                    Don't expect details.
+                </p>
+
+                <p>
+                    Larry's voice actor is some guy called
+                    <a href="https://m.youtube.com/@RandomHypixelChamp?ra=m"
+                       target="_blank">
+                        Random Hypixel Champ.
+                    </a>
+                </p>
+
+            </section>
+
+
+            <!-- Facts -->
+
+            <section class="card">
+
+                <h2>facts</h2>
+
+                <ul>
+
+                    <li>
+                        Larry likes naps.
+                    </li>
+
+                    <li>
+                        I forgot.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <h2>faq</h2>
+
+                <h3>
+                    Why is this page so short and low-effort? Seriously.
+                </h3>
+
+                <p>
+                    how do you expect me to fill all this out i don't want to write a lot of stuff. i don't even know what to write about myself. also what the heck is all this code stuff? i don't know how to code. i just want to nap.
+                </p>
+
+                <h3>
+                    It's called markdown, and it's a way to format text on the web. You can use it to make headings, lists-
+                </h3>
+
+                <p>
+                    who cares
+                </p>
+
+                <p>
+                    thats it for now.
+                </p>
+
+            </section>
+
+
+            <!-- Note -->
+
+            <section class="note">
+
+                <h3>note</h3>
+
+                <p>
+                    If this page is missing information, add it yourself.
+                    i'm busy.
+                </p>
+
+                <p>
+                    Actually don't, it sounds like lots of reading. goodbye.
+                </p>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- What the heck are these scripts doing here? Idk but they make the page look nice or sum. -->
+
+</body>
+</html>

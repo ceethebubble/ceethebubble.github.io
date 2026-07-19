@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "More Sugar";
-    src: url("assets/fonts/More Sugar.otf") format("opentype");
+    src: url("../fonts/More Sugar.otf") format("opentype");
 }
 
 * {
@@ -88,18 +88,6 @@ body {
 p {
     font-size: 19px;
     line-height: 1.7;
-}
-
-/* ---------- Links ---------- */
-
-a {
-    color: #7a54d8;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 /* ---------- Fun Facts ---------- */
@@ -276,7 +264,7 @@ hr {
 .dropdown-content h4 {
 
     margin: 10px 0;
-
+    color: #261943;
     font-family: "More Sugar";
     font-size: 20px;
 }
@@ -316,5 +304,28 @@ a {
 a:hover {
 
     color: #d14f87;
+
+}
+
+/* ---------- Scroll Fade Animation ---------- */
+
+.scroll-section {
+
+    opacity: 0;
+
+    transform: translateX(-80px);
+
+    transition:
+        opacity 1s ease,
+        transform 0.6s ease;
+
+}
+
+
+.scroll-section.visible {
+
+    opacity: 1;
+
+    transform: translateX(0);
 
 }
