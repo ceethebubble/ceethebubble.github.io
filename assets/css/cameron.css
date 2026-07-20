@@ -1,0 +1,539 @@
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* ---------- General ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background:
+        linear-gradient(
+            90deg,
+            #dbe8ff 0%,
+            #dbe8ff 33.333%,
+
+            #ffffff 33.333%,
+            #ffffff 66.666%,
+
+            #ffdede 66.666%,
+            #ffdede 100%
+        );
+
+    background-size: 150% 100%;
+
+    animation: backgroundMove 12s linear infinite;
+
+    color: #243448;
+
+    font-family: "Arial", sans-serif;
+    font-weight: bold;
+
+    min-height: 100vh;
+
+    position: relative;
+
+}
+
+
+/* ---------- Scanlines ---------- */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .06;
+
+    background:
+
+        repeating-linear-gradient(
+
+            180deg,
+
+            transparent 0px,
+
+            transparent 3px,
+
+            rgba(0,0,0,.18) 4px
+
+        );
+
+}
+
+
+/* ---------- Background ---------- */
+
+@keyframes backgroundMove {
+
+    from {
+
+        background-position: 0% 50%;
+
+    }
+
+    to {
+
+        background-position: 300% 50%;
+
+    }
+
+}
+
+
+/* ---------- News Banner ---------- */
+
+.news-banner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #17489f;
+
+    color: white;
+
+    padding: 14px 28px;
+
+    border-bottom: 5px solid #b51111;
+
+}
+
+.news-logo {
+
+    font-size: 34px;
+
+    letter-spacing: 1px;
+
+}
+
+.news-live {
+
+    background: #d71f1f;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    animation: pulse 1s infinite;
+
+}
+
+@keyframes pulse {
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+
+/* ---------- News Ticker ---------- */
+
+.news-ticker {
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    background: #c81212;
+
+    color: white;
+
+    border-bottom: 4px solid #8d0000;
+
+    font-size: 22px;
+
+    padding: 12px 0;
+
+}
+
+.ticker-track {
+
+    display: inline-block;
+
+    padding-left: 100%;
+
+    animation: ticker 25s linear infinite;
+
+}
+
+@keyframes ticker {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(-100%);
+
+    }
+
+}
+
+
+/* ---------- Layout ---------- */
+
+.layout {
+
+    min-height: 100vh;
+
+}
+
+.main-content {
+
+    flex: 1;
+
+}
+
+.content {
+
+    width: min(1000px,92%);
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* ---------- Cards ---------- */
+
+.card {
+
+    background: rgba(255,255,255,.95);
+
+    border-radius: 8px;
+
+    padding: 35px;
+
+    margin: 35px 0;
+
+    border: 3px solid #1f57b4;
+
+}
+
+.card h1,
+.card h2 {
+
+    margin-top: 0;
+
+    font-family: "Times New Roman", serif !important;
+    font-weight: normal;
+
+}
+
+
+/* ---------- Character Header ---------- */
+
+.character-header {
+
+    text-align: center;
+
+    width: 650px;
+
+    max-width: 90%;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    border: 5px solid #d61d1d;
+
+}
+
+.character-header h1 {
+
+    font-size: 52px;
+    font-family: "Times New Roman", serif !important;
+
+}
+
+.character-header img {
+
+    display: block;
+
+    margin: 25px auto;
+
+    width: 300px;
+
+    max-width: 80%;
+
+    border-radius: 12px;
+
+    border: 6px solid white;
+
+}
+
+
+/* ---------- LIVE Badge ---------- */
+
+.live-badge {
+
+    background: #d71f1f;
+
+    color: white;
+
+    font-size: 22px;
+
+    padding: 6px 14px;
+
+    font-family: Arial, sans-serif;
+
+    border-radius: 999px;
+
+    margin-left: 10px;
+
+    vertical-align: middle;
+
+}
+
+
+/* ---------- Text ---------- */
+
+p {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+}
+
+h2 {
+
+    font-size: 34px;
+
+    color: #17489f;
+
+    font-family: "Times New Roman", serif !important;
+
+    border-bottom: 4px solid #d61d1d;
+
+    padding-bottom: 10px;
+
+}
+
+h3 {
+
+    font-size: 26px;
+    font-family: "Times New Roman", serif !important;
+}
+
+li {
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ---------- Links ---------- */
+
+.main-content a {
+
+    color: #c81212;
+
+    text-decoration: none;
+
+}
+
+.main-content a:hover {
+
+    color: #17489f;
+
+}
+
+
+/* ---------- Information Table ---------- */
+
+.info-table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    margin-top: 25px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    font-size: 21px;
+
+}
+
+.info-table th {
+
+    background: #17489f;
+
+    color: white;
+
+    padding: 18px;
+
+    text-align: left;
+
+}
+
+.info-table td {
+
+    background: #eef4ff;
+
+    padding: 18px;
+
+}
+
+.info-table tr:nth-child(even) td {
+
+    background: #f7faff;
+
+}
+
+.info-table td:first-child {
+
+    font-weight: bold;
+
+    width: 35%;
+
+}
+
+
+/* ---------- Quote ---------- */
+
+blockquote {
+
+    margin: 20px auto;
+
+    max-width: 650px;
+
+    font-size: 23px;
+
+    color: #555;
+
+    font-style: italic;
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:700px){
+
+    .character-header h1{
+
+        font-size:38px;
+
+    }
+
+    p{
+
+        font-size:18px;
+
+    }
+
+    li{
+
+        font-size:18px;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+    .news-logo{
+
+        font-size:22px;
+
+    }
+
+    .news-live{
+
+        font-size:16px;
+
+    }
+
+}
+
+
+/* ---------- Scroll Animation ---------- */
+
+.scroll-section {
+
+    opacity: 0;
+
+    transform: translateX(-80px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.scroll-section.visible {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}
+
+/* ---------- Night News ---------- */
+
+body.night {
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b2147,
+            #18365c,
+            #2b2950
+        );
+
+}
+
+body.night .news-banner {
+
+    background: #06172f;
+
+}
+
+body.night .news-live {
+
+    background: #464646;
+
+    animation: pulse 0s infinite;
+
+}
+
+body.night .live-badge {
+
+    background: #464646;
+
+}

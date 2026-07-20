@@ -54,7 +54,7 @@ body {
 
 /* ---------- Cards ---------- */
 
-.card,
+.home-page .card,
 .note {
     background: rgba(255,255,255,.85);
     backdrop-filter: blur(10px);
@@ -68,16 +68,16 @@ body {
     box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
 
-.card h1,
-.note h1 {
+.home-page .card h1,
+.home-page .note h1 {
     font-family: "More Sugar";
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-.card h2,
-.note h2 {
+.home-page .card h2,
+.home-page .note h2 {
     font-family: "More Sugar";
     font-weight: normal;
     margin-top: 0;
@@ -158,8 +158,8 @@ hr {
         font-size: 17px;
     }
 
-    .card,
-    .note {
+    .home-page .card,
+    .home-page .note {
         padding: 22px;
     }
 
