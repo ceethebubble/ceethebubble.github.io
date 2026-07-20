@@ -1,0 +1,446 @@
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/* ---------- Fonts ---------- */
+
+@font-face {
+    font-family: "Tenderness";
+    src: url("../fonts/Tenderness.otf") format("opentype");
+}
+
+
+/* ---------- General ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+    background:
+        linear-gradient(
+            135deg,
+            #160000,
+            #2b0606,
+            #470909,
+            #190000
+        );
+
+    background-size: 300% 300%;
+
+    animation:
+        backgroundMove 15s ease infinite;
+
+    color: #fff5f0;
+
+    font-family: "Tenderness", sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+/* ---------- Background ---------- */
+
+@keyframes backgroundMove {
+
+    0% {
+
+        background-position: 0% 50%;
+
+    }
+
+    50% {
+
+        background-position: 100% 50%;
+
+    }
+
+    100% {
+
+        background-position: 0% 50%;
+
+    }
+
+}
+
+
+/* ---------- Hazard Overlay ---------- */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .04;
+
+    background:
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0px,
+            transparent 18px,
+            #ffcf00 18px,
+            #ffcf00 30px,
+            #000 30px,
+            #000 42px
+        );
+
+}
+
+
+/* ---------- Layout ---------- */
+
+.layout {
+
+    min-height: 100vh;
+
+}
+
+.main-content {
+
+    flex: 1;
+
+}
+
+.content {
+
+    width: min(1000px,92%);
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* ---------- Banner ---------- */
+
+.villain-banner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #770000;
+
+    border-bottom: 5px solid #ffcf00;
+
+    color: white;
+
+    padding: 16px 30px;
+
+}
+
+.villain-logo {
+
+    font-size: 32px;
+
+}
+
+.danger-level {
+
+    background: #ffcf00;
+
+    color: #3d0000;
+
+    padding: 8px 18px;
+
+    border-radius: 999px;
+
+    animation: pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+
+    background: rgba(35,0,0,.92);
+
+    border: 3px solid #8a0f0f;
+
+    border-radius: 10px;
+
+    padding: 35px;
+
+    margin: 35px 0;
+
+    position: relative;
+
+}
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -3px;
+    left: -3px;
+    right: -3px;
+
+    height: 8px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #ffcf00 0px,
+            #ffcf00 18px,
+            #111 18px,
+            #111 36px
+        );
+
+    border-radius: 10px 10px 0 0;
+
+}
+
+.card h1,
+.card h2 {
+
+    margin-top: 0;
+
+    color: #ffcf00;
+
+}
+
+.card h3 {
+
+    color: #ff8c8c;
+
+}
+
+
+/* ---------- Character Header ---------- */
+
+.character-header {
+
+    width: 650px;
+
+    max-width: 90%;
+
+    margin: 20px auto;
+
+    text-align: center;
+
+    transform: rotate(-1deg);
+
+}
+
+.character-header img {
+
+    display: block;
+
+    width: 300px;
+
+    max-width: 80%;
+
+    margin: 25px auto;
+
+}
+
+.character-header h1 {
+
+    font-size: 52px;
+
+}
+
+blockquote {
+
+    font-size: 24px;
+
+    color: #ffd9d9 !important;
+
+    font-style: italic;
+
+}
+
+
+/* ---------- Text ---------- */
+
+p {
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #fff5f0;
+
+}
+
+li {
+
+    font-size: 22px;
+
+    line-height: 1.7;
+
+    color: #fff5f0;
+
+}
+
+
+/* ---------- Links ---------- */
+
+.main-content a {
+
+    color: #00aeff;
+
+    transition: color .3s ease;
+
+}
+
+.main-content a:hover {
+
+    color: white;
+
+}
+
+
+/* ---------- Table ---------- */
+
+.info-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+
+    font-size: 21px;
+
+}
+
+.info-table th {
+
+    background: #8a0f0f;
+
+    color: white;
+
+    padding: 16px;
+
+    text-align: left;
+
+}
+
+.info-table td {
+
+    background: rgba(255,255,255,.06);
+
+    padding: 16px;
+
+    color: #fff5f0;
+
+}
+
+.info-table td:first-child {
+
+    color: #ffcf00;
+
+    width: 35%;
+    font-weight: bold;
+
+}
+
+
+/* ---------- Divider ---------- */
+
+hr {
+
+    border: none;
+
+    height: 2px;
+
+    background: rgba(255,255,255,.15);
+
+    margin: 35px 0;
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:700px){
+
+    .villain-banner{
+
+        flex-direction:column;
+
+        gap:12px;
+
+        text-align:center;
+
+    }
+
+    .villain-logo{
+
+        font-size:24px;
+
+    }
+
+    .character-header h1{
+
+        font-size:38px;
+
+    }
+
+    p,
+    li{
+
+        font-size:18px;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+}
+
+
+/* ---------- Scroll Animation ---------- */
+
+.scroll-section {
+
+    opacity: 0;
+
+    transform: translateX(-80px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+.scroll-section.visible {
+
+    opacity: 1;
+
+    transform: translateX(0);
+
+}

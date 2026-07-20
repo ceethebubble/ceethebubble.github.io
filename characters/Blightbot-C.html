@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blightbot C - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/blightbot.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1 class="mono-title">BLIGHTBOT C</h1>
+
+                <img src="../assets/images/characters/blightbot-c.png"
+                     alt="Blightbot C"
+                     width="200">
+
+            </section>
+
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2 class="mono-title">WELCOME.</h2>
+
+                <p>
+                    Welcome to Blightbot C's page. This page is very similar
+                    to the other bots because there isn't much difference
+                    between them. We can still tell you battle information
+                    and more.
+                </p>
+
+            </section>
+
+
+
+            <!-- Model Information -->
+
+            <section class="card">
+
+                <h2 class="mono-title">MODEL INFORMATION</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Blightbot Model C</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>It/It</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Works for <a href="bubbleblight.html">Bubbleblight</a>.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Robot</td>
+                    </tr>
+
+                </table>
+
+                <h3 class="mono-subtitle">DESCRIPTION</h3>
+
+                <p>
+                    Blightbot C was the third robotic model developed by the
+                    villain <a href="bubbleblight.html">Bubbleblight</a>. Its
+                    goal is to destroy any residents of Beringstern or anyone
+                    that crosses its path. There are three other Blightbot
+                    models with the same purpose.
+                </p>
+
+            </section>
+
+
+
+            <!-- Interview -->
+
+            <section class="card">
+
+                <h2 class="mono-title">INTERVIEW</h2>
+
+                <div class="terminal">
+
+                    <p class="terminal-question">
+                        What do you want the most?
+                    </p>
+
+                    <p class="terminal-line">
+                        I WANT TO TOUCH THE LASERS!
+                    </p>
+
+                    <p class="terminal-question">
+                        OK&hellip;anything else?
+                    </p>
+
+                    <p class="terminal-line">
+                        I WANT &ensp;<span class="glitch-gap"></span> THE LASERS!
+                    </p>
+
+                    <p class="terminal-question">
+                        If you were able to have one ability what would it be?
+                    </p>
+
+                    <p class="terminal-line">
+                        I WANT TO &ensp;<span class="glitch-gap"></span> &ensp;LASER &ensp;!
+                    </p>
+
+                    <p class="terminal-question">
+                        Any advice to the people reading?
+                    </p>
+
+                    <p class="terminal-line terminal-alarm">
+                        <span class="glitch-gap"></span> TOUCH THE LASERS!
+                    </p>
+
+                    <p class="terminal-end">
+                        &gt; (Due to the interviewer being stupid and
+                        actually touching the lasers, the interview had to
+                        end.)
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Battle Information -->
+
+            <section class="card note">
+
+                <h2 class="mono-title">BATTLE INFORMATION</h2>
+
+                <p>
+                    Blightbot C has a bit of a different way of attacking
+                    than the first two bots.
+                </p>
+
+
+                <div class="battle-grid">
+
+                    <div class="battle-box attack-box">
+
+                        <h3 class="mono-subtitle">ATTACKS</h3>
+
+                        <p>
+                            Similar to <a href="blightbot-b.html">Blightbot B</a>,
+                            this one attacks with a laser. However, it sends
+                            out an orb of electricity that shoots lasers out.
+                            Just do the same thing you've done earlier.
+                        </p>
+
+                    </div>
+
+
+                    <div class="battle-box spare-box">
+
+                        <h3 class="mono-subtitle">SPARE</h3>
+
+                        <p>
+                            Unfortunately, Blightbot C lacks a proper spare
+                            switch. However, it will occasionally shout its
+                            iconic phrase, "I want to touch the lasers!" Try
+                            to redirect the laser attack to the bot.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+
+</body>
+</html>

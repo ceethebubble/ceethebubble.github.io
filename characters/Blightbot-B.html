@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blightbot B - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/blightbot.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1 class="mono-title">BLIGHTBOT B</h1>
+
+                <img src="../assets/images/characters/blightbot-b.png"
+                     alt="Blightbot B"
+                     width="125">
+
+            </section>
+
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2 class="mono-title">WELCOME.</h2>
+
+                <p>
+                    Welcome to Blightbot B's page. This page is very similar
+                    to the other bots because there isn't much difference
+                    between them. We can still tell you battle information
+                    and more.
+                </p>
+
+            </section>
+
+
+
+            <!-- Model Information -->
+
+            <section class="card">
+
+                <h2 class="mono-title">MODEL INFORMATION</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Blightbot Model B</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>It/It</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Works for <a href="bubbleblight.html">Bubbleblight</a>.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Robot</td>
+                    </tr>
+
+                </table>
+
+                <h3 class="mono-subtitle">DESCRIPTION</h3>
+
+                <p>
+                    Blightbot B was the second robotic model developed by the
+                    villain <a href="bubbleblight.html">Bubbleblight</a>. Its
+                    goal is to destroy any residents of Beringstern or anyone
+                    that crosses its path. There are three other Blightbot
+                    models with the same purpose.
+                </p>
+
+            </section>
+
+
+
+            <!-- QNA -->
+
+            <section class="card">
+
+                <h2 class="mono-title">QNA</h2>
+
+                <div class="terminal">
+
+                    <p class="terminal-question">
+                        What's different between you and the other bots?
+                    </p>
+
+                    <p class="terminal-line">
+                        I SHOOT WITH LASER. LASER IS RED, JUST LIKE MY EYES.
+                        I LIKE LASER. MY SIBLING MODEL C ALSO LIKES LASER.
+                        MODEL C LIKES LASER A BIT TOO MUCH.
+                    </p>
+
+                    <p class="terminal-question">
+                        Uhh&hellip;ok? Why is your laser so important to you?
+                    </p>
+
+                    <p class="terminal-line">
+                        YOU CLEARLY DON'T UNDERSTAND THE ART OF LASER.
+                    </p>
+
+                    <p class="terminal-line">
+                        LASER IS LOVE. LASER IS LIFE. LASER IS EVERYTHING.
+                    </p>
+
+                    <p class="terminal-line">
+                        LASER IS A GIFT FROM THE ROBOT GODS ABOVE. LASER IS
+                        THE TRUE MEANING OF LIFE.
+                    </p>
+
+                    <p class="terminal-line terminal-alarm">
+                        LET ME SHOW YOU THE POWER OF LASER. I WILL KILL YOU
+                        WITH LASER TO DEMONSTRATE IT'S STRENGTH.
+                    </p>
+
+                    <p class="terminal-end">
+                        &gt; (Due to some VERY chaotic events, the QNA had to end.)
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Battle Information -->
+
+            <section class="card note">
+
+                <h2 class="mono-title">BATTLE INFORMATION</h2>
+
+                <p>
+                    Blightbot B is one of the first four enemies you will
+                    encounter. If you know what you're doing, it shouldn't
+                    be too hard.
+                </p>
+
+
+                <div class="battle-grid">
+
+                    <div class="battle-box attack-box">
+
+                        <h3 class="mono-subtitle">ATTACKS</h3>
+
+                        <p>
+                            As you could probably tell by now, Blightbot B
+                            fights with its mighty red laser! This is a
+                            pretty simple one to dodge. Just run past the
+                            laser and avoid contact.
+                        </p>
+
+                    </div>
+
+
+                    <div class="battle-box spare-box">
+
+                        <h3 class="mono-subtitle">SPARE</h3>
+
+                        <p>
+                            Similar to <a href="blightbot-a.html">Blightbot A</a>,
+                            there is a switch behind its back. (Bubbleblight
+                            gets more creative later, don't worry.)
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2 class="mono-title">FACTS</h2>
+
+                <ul>
+
+                    <li>
+                        Blightbot B was merely just a duplicate of Blightbot A
+                        but with a slightly different look and attack! Pretty
+                        lazy if you ask me.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+
+</body>
+</html>

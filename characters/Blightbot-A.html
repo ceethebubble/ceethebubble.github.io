@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blightbot A - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/blightbot.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1 class="mono-title">BLIGHTBOT A</h1>
+
+                <img src="../assets/images/characters/blightbot-a.png"
+                     alt="Blightbot A"
+                     width="250">
+
+            </section>
+
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2 class="mono-title">WELCOME, USER.</h2>
+
+                <p>
+                    Welcome to Blightbot A's page. While there isn't much to
+                    go over about its character, we can tell you about its
+                    attacks and what you can do during a fight.
+                </p>
+
+            </section>
+
+
+
+            <!-- Model Information -->
+
+            <section class="card">
+
+                <h2 class="mono-title">MODEL INFORMATION</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Blightbot Model A</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>It/It</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Works for <a href="bubbleblight.html">Bubbleblight</a>.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Robot</td>
+                    </tr>
+
+                </table>
+
+                <h3 class="mono-subtitle">DESCRIPTION</h3>
+
+                <p>
+                    Blightbot A was the first robotic model developed by the
+                    villain <a href="bubbleblight.html">Bubbleblight</a>. Its
+                    goal is to destroy any residents of Beringstern or anyone
+                    that crosses its path. There are three other Blightbot
+                    models with the same purpose.
+                </p>
+
+            </section>
+
+
+
+            <!-- QNA -->
+
+            <section class="card">
+
+                <h2 class="mono-title">QNA</h2>
+
+                <div class="terminal">
+
+                    <p class="terminal-question">
+                        When did Bubbleblight first create you?
+                    </p>
+
+                    <p class="terminal-line">
+                        I WAS FIRST CREATED IN&mdash; WAIT. YOU AREN'T
+                        SUPPOSED TO KNOW THAT INFORMATION. CHARGING UP BEAM.
+                    </p>
+
+                    <p class="terminal-question">
+                        wait what
+                    </p>
+
+                    <p class="terminal-line terminal-alarm">
+                        FIRING IN 3.
+                    </p>
+
+                    <p class="terminal-line terminal-alarm">
+                        FIRING IN 2.
+                    </p>
+
+                    <p class="terminal-line terminal-alarm">
+                        FIRING IN 1.
+                    </p>
+
+                    <p class="terminal-end">
+                        &gt; (Due to some chaotic events, the QNA had to end.)
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Battle Information -->
+
+            <section class="card note">
+
+                <h2 class="mono-title">BATTLE INFORMATION</h2>
+
+                <p>
+                    Blightbot A is the first enemy you will fight in Chapter
+                    1, so you may feel a little unsure of what to do. Not to
+                    worry though. Use what you learned, and you shall
+                    continue safely.
+                </p>
+
+
+                <div class="battle-grid">
+
+                    <div class="battle-box attack-box">
+
+                        <h3 class="mono-subtitle">ATTACKS</h3>
+
+                        <p>
+                            Blightbot A will attack with a blue beam with good
+                            range. This is the only attack it has, and simply
+                            walking out of the way will do.
+                        </p>
+
+                    </div>
+
+
+                    <div class="battle-box spare-box">
+
+                        <h3 class="mono-subtitle">SPARE</h3>
+
+                        <p>
+                            At first glance you may not see it, but Blightbot
+                            A has a secret switch behind it. Just sneak up
+                            behind its back and stay there. Once the bot has
+                            turned fully green, it has been spared!
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2 class="mono-title">FACTS</h2>
+
+                <ul>
+
+                    <li>
+                        Blightbot A is the first enemy you encounter in
+                        Chapter 1. (other than the Training Dummy)
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@500;700;900&display=swap');
+
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ---------- Base ---------- */
+
+body {
+
+    background: #050a0c;
+
+    background-image:
+        linear-gradient(rgba(0,229,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.045) 1px, transparent 1px);
+
+    background-size: 38px 38px;
+
+    color: #d9f7ff;
+
+    font-family: "Share Tech Mono", monospace;
+
+    min-height: 100vh;
+
+    position: relative;
+
+}
+
+/* Scanline sweep — the signature motion of the page */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0,229,255,.05) 48%,
+        rgba(0,229,255,.12) 50%,
+        rgba(0,229,255,.05) 52%,
+        transparent 100%
+    );
+
+    background-size: 100% 240px;
+
+    animation: scan 6s linear infinite;
+
+}
+
+@keyframes scan {
+
+    0% { background-position: 0 -240px; }
+    100% { background-position: 0 100vh; }
+
+}
+
+/* Faint static flicker overlay */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: .025;
+
+    z-index: 998;
+
+    background: repeating-linear-gradient(
+        0deg,
+        #ffffff 0px,
+        #ffffff 1px,
+        transparent 1px,
+        transparent 3px
+    );
+
+}
+
+
+/* ---------- Layout ---------- */
+
+.layout {
+
+    min-height: 100vh;
+
+}
+
+.main-content {
+
+    flex: 1;
+
+}
+
+.content {
+
+    width: min(1000px,92%);
+
+    margin: auto;
+
+    padding-bottom: 60px;
+
+}
+
+
+/* ---------- Nav / Banner (in case navbar reuses these classes) ---------- */
+
+.villain-banner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #08161a;
+
+    border-bottom: 2px solid #00e5ff;
+
+    color: #d9f7ff;
+
+    padding: 16px 30px;
+
+    font-family: "Orbitron", sans-serif;
+
+}
+
+.villain-logo {
+
+    font-size: 26px;
+
+    letter-spacing: 3px;
+
+}
+
+.danger-level {
+
+    background: #ffb000;
+
+    color: #0a0a0a;
+
+    padding: 8px 18px;
+
+    border-radius: 3px;
+
+    font-family: "Share Tech Mono", monospace;
+
+    animation: pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+
+    50% { opacity: .55; }
+
+}
+
+
+/* ---------- HUD Panels (cards) ---------- */
+
+.card {
+
+    background: #0a1417;
+
+    border: 1px solid rgba(0,229,255,.35);
+
+    border-radius: 2px;
+
+    padding: 35px;
+
+    margin: 40px 0;
+
+    position: relative;
+
+}
+
+/* Corner brackets — HUD signature element */
+
+.card::before,
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 22px;
+
+    height: 22px;
+
+    border: 2px solid #00e5ff;
+
+    top: -1px;
+
+}
+
+.card::before {
+
+    left: -1px;
+
+    border-right: none;
+
+    border-bottom: none;
+
+}
+
+.card::after {
+
+    right: -1px;
+
+    border-left: none;
+
+    border-bottom: none;
+
+}
+
+.card {
+
+    border-bottom: 2px solid rgba(0,229,255,.35);
+
+}
+
+.card h1,
+.card h2 {
+
+    margin-top: 0;
+
+    color: #00e5ff;
+
+    font-family: "Orbitron", sans-serif;
+
+    letter-spacing: 2px;
+
+}
+
+.card h3 {
+
+    color: #ffb000;
+
+    font-family: "Orbitron", sans-serif;
+
+    letter-spacing: 1.5px;
+
+}
+
+.card h2::before {
+
+    content: "";
+
+    display: inline-block;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #39ff88;
+
+    margin-right: 12px;
+
+    animation: blink 1.4s ease-in-out infinite;
+
+    vertical-align: middle;
+
+}
+
+@keyframes blink {
+
+    50% { opacity: .25; }
+
+}
+
+
+/* ---------- Note / Alert Panel (Battle Info) ---------- */
+
+.card.note {
+
+    background: #140d02;
+
+    border: 1px solid #ffb000;
+
+}
+
+.card.note::before,
+.card.note::after {
+
+    border-color: #ffb000;
+
+}
+
+.card.note {
+
+    border-bottom: 2px solid rgba(255,176,0,.5);
+
+}
+
+.card.note h2::before {
+
+    background: #ffb000;
+
+}
+
+
+/* ---------- Character Header ---------- */
+
+.character-header {
+
+    width: 650px;
+
+    max-width: 90%;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+.character-header img {
+
+    display: block;
+
+    width: 200px;
+
+    max-width: 80%;
+
+    margin: 25px auto;
+
+    filter: drop-shadow(0 0 18px rgba(0,229,255,.35));
+
+}
+
+.character-header h1 {
+
+    font-size: 44px;
+
+}
+
+
+/* ---------- Text ---------- */
+
+p {
+
+    font-size: 19px;
+
+    line-height: 1.8;
+
+    color: #c3ecf5;
+
+}
+
+li {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color: #c3ecf5;
+
+}
+
+
+/* ---------- Links ---------- */
+
+.main-content a {
+
+    color: #00e5ff;
+
+    text-decoration: underline;
+
+}
+
+.main-content a:hover {
+
+    color: #ffb000;
+
+}
+
+
+/* ---------- Table ---------- */
+
+.info-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 25px;
+
+    font-size: 18px;
+
+}
+
+.info-table th {
+
+    background: #08161a;
+
+    color: #00e5ff;
+
+    padding: 14px 16px;
+
+    text-align: left;
+
+    border-bottom: 1px solid rgba(0,229,255,.35);
+
+    font-family: "Orbitron", sans-serif;
+
+    letter-spacing: 1px;
+
+}
+
+.info-table td {
+
+    background: rgba(0,229,255,.03);
+
+    padding: 14px 16px;
+
+    color: #c3ecf5;
+
+    border-bottom: 1px solid rgba(0,229,255,.12);
+
+}
+
+.info-table td:first-child {
+
+    color: #ffb000;
+
+    width: 35%;
+
+}
+
+
+/* ---------- Terminal / QNA Block ---------- */
+
+.terminal {
+
+    background: #010506;
+
+    border: 1px solid #39ff88;
+
+    border-radius: 2px;
+
+    padding: 25px 30px;
+
+    margin-top: 20px;
+
+}
+
+.terminal-question {
+
+    color: #ffb000;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin: 18px 0 6px;
+
+}
+
+.terminal-question::before {
+
+    content: "> ";
+
+}
+
+.terminal-line {
+
+    color: #39ff88;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    margin: 4px 0;
+
+}
+
+.terminal-alarm {
+
+    color: #ff3b3b;
+
+    animation: flicker 1s steps(2, start) infinite;
+
+}
+
+@keyframes flicker {
+
+    50% { opacity: .35; }
+
+}
+
+.terminal-end {
+
+    color: #6f8992;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    margin-top: 18px;
+
+    border-top: 1px dashed rgba(255,255,255,.15);
+
+    padding-top: 14px;
+
+}
+
+/* Signal gap — represents corrupted / dropped-out words in glitchy dialogue */
+
+.glitch-gap {
+
+    display: inline-block;
+
+    width: 74px;
+
+    height: .85em;
+
+    vertical-align: middle;
+
+    margin: 0 4px;
+
+    background: repeating-linear-gradient(
+        45deg,
+        #ff3b3b 0px,
+        #ff3b3b 3px,
+        transparent 3px,
+        transparent 6px
+    );
+
+    opacity: .05;
+
+    animation: flicker .4s steps(2, start) infinite;
+
+}
+
+
+/* ---------- Battle Grid ---------- */
+
+.battle-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-top: 25px;
+
+}
+
+.battle-box {
+
+    border-radius: 2px;
+
+    padding: 22px 25px;
+
+    background: #0a1417;
+
+}
+
+.attack-box {
+
+    border: 1px solid #ff3b3b;
+
+    border-left: 4px solid #ff3b3b;
+
+}
+
+.attack-box h3 {
+
+    color: #ff6b6b;
+
+}
+
+.spare-box {
+
+    border: 1px solid #39ff88;
+
+    border-left: 4px solid #39ff88;
+
+}
+
+.spare-box h3 {
+
+    color: #39ff88;
+
+}
+
+@media (max-width:700px){
+
+    .battle-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+/* ---------- Divider ---------- */
+
+hr {
+
+    border: none;
+
+    height: 1px;
+
+    background: rgba(0,229,255,.2);
+
+    margin: 35px 0;
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:700px){
+
+    .villain-banner {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+
+    }
+
+    .character-header h1 {
+
+        font-size: 30px;
+
+    }
+
+    p, li {
+
+        font-size: 16px;
+
+    }
+
+    .card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+/* ---------- Scroll Animation ---------- */
+
+.scroll-section {
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+
+}
+
+.scroll-section.visible {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}

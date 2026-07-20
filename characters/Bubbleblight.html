@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbleblight - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/bubbleblight.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1>Bubbleblight</h1>
+
+                <img src="../assets/images/characters/bubbleblight.png"
+                     alt="Bubbleblight"
+                     width="300">
+
+                <blockquote>
+                    "Mayor Ben? More like Mayor BUM!"
+                </blockquote>
+
+            </section>
+
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2>Welcome, Prisoner!</h2>
+
+                <p>
+                    Congratulations. You have somehow found Bubbleblight's
+                    official wiki page.
+                </p>
+
+                <p>
+                    Unlike certain boring mayor pages, this one is actually
+                    worth reading because Bubbleblight is the greatest villain
+                    Beringstern has ever seen!
+                </p>
+
+            </section>
+
+
+
+            <!-- Character Information -->
+
+            <section class="card">
+
+                <h2>Villain Profile</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+
+                    <tr>
+                        <td>Full Name</td>
+                        <td>Bubbleblight Bubblepuff</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>He/Him</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>SUPER-Villain</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Bubble</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>Alignment</td>
+                        <td>Chaotic</td>
+                    </tr>
+
+
+                </table>
+
+            </section>
+
+
+
+
+            <!-- About -->
+
+            <section class="card">
+
+                <h2>About</h2>
+
+
+                <p>
+                    Bubbleblight is the main antagonist of the Beringstern
+                    series and a self-proclaimed genius mastermind.
+                </p>
+
+
+                <p>
+                    With countless plans, inventions, and questionable ideas,
+                    Bubbleblight believes he is the only person qualified to
+                    lead Beringstern.
+                </p>
+
+
+                <p>
+                    During the events of Chapter 1, Bubbleblight kidnaps
+                    <a href="mayor-ben.html">
+                        Mayor Ben
+                    </a>
+
+                    and takes him to a private peninsula, hoping to finally
+                    take control of the town.
+                </p>
+
+
+                <p>
+                    Unfortunately for Bubbleblight, a group of heroes decides
+                    to interfere with his perfect plan.
+                </p>
+
+
+                <p>
+                    Bubbleblight is voiced by Cee the Bubble.
+                </p>
+
+
+            </section>
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <h2>FA-Q!</h2>
+
+
+                <h3>
+                    Why do you keep causing problems?
+                </h3>
+
+                <p>
+                    Problems? Those are not problems. They are incredibly
+                    advanced plans created by a genius!
+                </p>
+
+                <p>
+                    If something goes wrong, that is simply because everyone
+                    else failed to understand my brilliance.
+                </p>
+
+
+
+                <h3>
+                    What are your opinions on Mayor Ben?
+                </h3>
+
+
+                <p>
+                    Benny thinks he can just walk around being nice to everyone
+                    and call that leadership?
+                </p>
+
+
+                <p>
+                    He doesn't understand what Beringstern really needs.
+                    Luckily, I do.
+                </p>
+
+
+            </section>
+
+
+
+
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2>Fun Facts</h2>
+
+
+                <ul>
+
+                    <li>
+                        Bubbleblight has fought many opponents and definitely could have won if he really wanted to.
+                    </li>
+
+
+                    <li>
+                        Bubbleblight once transported someone into another
+                        dimension.
+                    </li>
+
+
+                    <li>
+                        Bubbleblight considers himself far more qualified to
+                        run Beringstern than Mayor Ben.
+                    </li>
+
+
+                    <li>
+                        Vaping has been an issue with Bubbleblight in his teen years, causing severe issues.
+                    </li>
+
+
+                </ul>
+
+
+            </section>
+
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+
+</body>
+</html>
