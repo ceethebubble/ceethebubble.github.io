@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May - Beringstern Wiki</title>
+
+    <link rel="stylesheet" href="../assets/css/cee.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- Navigation -->
+
+    <div id="navbar"></div>
+
+    <script>
+    fetch("../assets/includes/navbar.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/cee.css">
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <section class="content">
+
+
+            <!-- Character Header -->
+
+            <section class="card character-header">
+
+                <h1>May</h1>
+
+                <img src="../assets/images/characters/may.png"
+                     alt="May"
+                     width="200">
+
+            </section>
+
+
+            <!-- Welcome -->
+
+            <section class="card">
+
+                <h2>Hey!</h2>
+
+                <p>
+                    Guess whose page you stumbled upon? Welcome to May's page!
+                    She's a green-ish blue (or just teal) bubble who loves anything creative.
+                </p>
+
+                <p>
+                    She emjoys drawing, reading, writing, and sometimes
+                    animating!
+                </p>
+
+                <p>
+                    She also has a
+                    <a href="https://www.youtube.com/@Maythebubble-z1t" target="_blank">
+                        YouTube channel.
+                    </a>
+                </p>
+
+            </section>
+
+
+            <!-- Character Information -->
+
+            <section class="card">
+
+                <h2>Info</h2>
+
+                <table class="info-table">
+
+                    <tr>
+                        <th>Attribute</th>
+                        <th>Value</th>
+                    </tr>
+
+                    <tr>
+                        <td>Name</td>
+                        <td>May the Bubble</td>
+                    </tr>
+
+                    <tr>
+                        <td>Birthday</td>
+                        <td>October 30th</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pronouns</td>
+                        <td>She/Her</td>
+                    </tr>
+
+                    <tr>
+                        <td>Occupation</td>
+                        <td>Student</td>
+                    </tr>
+
+                    <tr>
+                        <td>Species</td>
+                        <td>Bubble</td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+
+            <!-- About -->
+
+            <section class="card">
+
+                <h2>About</h2>
+
+                <p>
+                    May likes to make write, read, and create art! She is overall a nice person,
+                    good listener, and tries to help others when she can.
+                </p>
+
+                <p>
+                    However, she can be a bit fragile, and does get easily 
+                    annoyed or sarcastic</code>
+                </p>
+
+                <p>
+                    May enjoys  many things like hanging out with friends or family, drawing, writing,
+                    (maybe animating) and drawing! You'll always see her csrry a book bag around!
+                </p>
+
+                <p>
+                    May the Bubble is voiced by
+                    <a href="https://www.youtube.com/@Mayvee-i9y" target="_blank">
+                        Mayvee
+                    </a>
+                    (See a connection?)
+                </p>
+
+                <p>
+                    May has two brothers as well!
+                    
+                </p>
+
+            </section>
+
+
+            <!-- FAQ -->
+
+            <section class="card">
+
+                <h2>QNA</h2>
+
+                <h3>
+                    Do you have any pets?
+                </h3>
+
+                <p>
+                    Yup I do! Three cats in fact!
+                    Coco, Rocky, and George!
+                </p>
+
+                 <h3>
+                    Are you focused on school?
+                </h3>
+
+                <p>
+                    Pretty focused I would say, but enjoy doing my own
+                    thing :) 
+                </p>
+                
+                 <h3>
+                    Were you actually asked for $3,479,347.54
+                </h3>
+
+                <p>
+                    Yes. I was. I DON'T EVEN KNOW WHY A
+                    PACK OF REEDS COST THAT MUCH!!!
+
+                    sorry.
+                </p>
+
+            </section>
+
+
+            <!-- Fun Facts -->
+
+            <section class="card">
+
+                <h2>Fun Facts</h2>
+
+                <ul>
+
+                    <li>
+                        May has had a book bag for a few years (about 5)! Surprised it 
+                        hasn't ripped yet...
+                    </li>
+
+                    <li>
+                        Her favorite food is Noodles!
+                    </li>
+
+                    <li>
+                        She hates certain overpriced things like reeds.
+                    </li>
+
+                    <li>
+                        That's it for now, more coming soon! :D
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+
+const sections = document.querySelectorAll(
+    ".hero, .card, .note"
+);
+
+
+sections.forEach(section => {
+
+    section.classList.add("scroll-section");
+
+});
+
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+            } else {
+
+                entry.target.classList.remove("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
+    }
+);
+
+
+sections.forEach(section => {
+
+    observer.observe(section);
+
+});
+
+
+</script>
+
+</body>
+</html>
