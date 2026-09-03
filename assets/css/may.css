@@ -23,9 +23,9 @@ html, body {
 
 body {
 
-    background: linear-gradient(to bottom, #efe0ff, #d0acff, #c8a7ff);
+    background: linear-gradient(to bottom, #5effd4, #005667);
 
-    color: #48136f;
+    color: #136f6a;
 
     font-family: "Baby Doll", sans-serif;
     font-weight: bold;
@@ -213,13 +213,13 @@ li {
 
 .info-table th {
 
-    background: #e385ff;
+    background: #00ff99;
 
     padding: 18px;
 
     text-align: left;
 
-    color: #5917a5;
+    color: #005b60;
 
     font-size: 22px;
 
@@ -230,7 +230,7 @@ li {
 
     padding: 18px;
 
-    background: #df7dffb3;
+    background: #7dffc7b3;
 }
 
 
@@ -247,7 +247,7 @@ li {
 
     width: 35%;
 
-    color: #5917a5;
+    color: #005a42;
 
 }
 
@@ -281,7 +281,7 @@ hr {
 
     height: 2px;
 
-    background: #e9d4ff;
+    background: #d4fff7;
 
     margin: 40px 0;
 
@@ -361,17 +361,4 @@ hr {
 
     transform: translateX(0);
 
-}
-
-/* ---------- Doodles ---------- */
-
-.doodles {
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.doodle {
-    position: absolute;
-    opacity: 0.90;
 }
