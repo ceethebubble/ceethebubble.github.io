@@ -344,13 +344,13 @@ hr {
 
 .scroll-section {
 
-    opacity: 0;
+    opacity: 1;
 
-    transform: translateX(80px);
+    transform: translateX(var(--slide-x, 80px));
 
     transition:
-        opacity 0.7s ease,
-        transform 0.7s ease;
+        opacity 0.7s cubic-bezier(0.34, 1.56, 0.64, 1),
+        transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
 
 }
 

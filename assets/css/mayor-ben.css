@@ -391,7 +391,7 @@ hr {
 
 .scroll-section {
 
-    opacity: 0;
+    opacity: 0.6;
 
     transform: translateX(-80px);
 

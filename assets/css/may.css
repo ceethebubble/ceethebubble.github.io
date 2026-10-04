@@ -34,11 +34,26 @@ body {
 
 }
 
+body::before {
+
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    background: url("../images/misc/may-pattern.svg") repeat;
+    background-size: 390px 390px;
+
+}
+
 
 /* ---------- Layout ---------- */
 
 .layout {
     min-height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -343,11 +358,8 @@ hr {
 /* ---------- Scroll Fade Animation ---------- */
 
 .scroll-section {
-
-    opacity: 0;
-
+    opacity: 0.7;
     transform: translateX(80px);
-
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;

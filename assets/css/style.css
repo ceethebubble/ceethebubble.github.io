@@ -189,99 +189,30 @@ hr {
     vertical-align: middle;
 }
 
-/* ---------- Navigation bar ---------- */
+/* ---------- Homepage navigation typography ---------- */
 
-.navbar {
-
-    display: flex;
-    align-items: center;
-
-    gap: 30px;
-
-    padding: 18px 40px;
-
-    background: rgba(255,255,255,.8);
-
-    backdrop-filter: blur(10px);
-
-    box-shadow: 0 4px 20px rgba(0,0,0,.08);
-
-    position: sticky;
-    top: 0;
-
-    z-index: 1000;
-
-}
-
-.navbar a,
-.dropbtn {
-
+.home .navbar a,
+.home .dropbtn {
     font-family: "More Sugar";
     font-weight: normal;
-
     font-size: 26px;
-
     color: #45336e;
-
-    background: none;
-
-    border: none;
-
-    cursor: pointer;
-
-    text-decoration: none;
-
 }
 
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-
-    display: none;
-
-    font-family: "Arial", sans-serif;
-    font-weight: bold;
-    position: absolute;
-
-    top: 45px;
-
-    left: 0;
-
-    min-width: 270px;
-
-    background: white;
-
-    border-radius: 15px;
-
-    box-shadow: 0 10px 30px rgba(0,0,0,.15);
-
-    padding: 15px;
-
-}
-
-.navbar .dropdown-content h4 {
-    margin: 10px 0;
-    color: #261943 !important;
-    font-family: "More Sugar";
-    font-size: 20px;
-}
-
-.dropdown-content a {
-
-    display: block;
-
-    padding: 6px 0;
-
-    font-size: 18px;
-
+.home .dropdown-content {
     font-family: Arial, sans-serif;
     font-weight: bold;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.home .navbar .dropdown-content h4 {
+    font-family: "More Sugar";
+    font-size: 23px;
+}
+
+.home .dropdown-content a {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 /* ---------- Links ---------- */
@@ -310,9 +241,9 @@ a:hover {
 
 .scroll-section {
 
-    opacity: 0;
+    opacity: 0.8;
 
-    transform: translateX(-80px);
+    transform: translateX(var(--scroll-start-x, -80px));
 
     transition:
         opacity 1s ease,

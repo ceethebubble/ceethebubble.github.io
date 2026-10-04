@@ -9,7 +9,7 @@
     <link rel="icon" href="/favicon.ico">
 </head>
 
-<body>
+<body class="home">
 
 <div class="layout">
 
@@ -52,11 +52,11 @@ fetch("assets/includes/navbar.html")
 
                 <p>
                     Here, you can get information and learn about characters,
-                    places, items, and more, whether from
+                    places, and more, from
                     <a href="https://youtube.com/@bubblecee" target="_blank">
                         Cee the Bubble's
                     </a>
-                    YouTube videos or the game itself!
+                    YouTube videos!
                 </p>
 
                 <p>
@@ -194,6 +194,10 @@ const sections = document.querySelectorAll(
 sections.forEach(section => {
 
     section.classList.add("scroll-section");
+    section.style.setProperty(
+        "--scroll-start-x",
+        `${Math.random() * 160 - 80}px`
+    );
 
 });
 

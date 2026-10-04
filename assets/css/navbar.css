@@ -1,0 +1,93 @@
+/* ---------- Shared navigation ---------- */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 18px 40px;
+    background: rgba(255,255,255,.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.dark-page .navbar {
+    background: rgba(12, 4, 4, .92);
+}
+
+.navbar a,
+.dropbtn {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 26px;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transform-origin: top;
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0s linear 0.2s;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    min-width: 270px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    padding: 15px;
+}
+
+.dark-page .dropdown-content {
+    background: #1b0808;
+}
+
+.navbar .dropdown-content h4 {
+    margin: 10px 0;
+    color: inherit;
+    color: color-mix(in srgb, currentColor 70%, rgb(8, 0, 68));
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 6px 0;
+    font-size: 18px;
+    font-family: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+.navbar a:hover,
+.navbar a:focus-visible {
+    color: #d14f87;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
